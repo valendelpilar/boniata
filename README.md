@@ -1,4 +1,4 @@
 # boniata (en proceso) 
 
-## Pagina eccomerce de dietetica 
-## link a Github Pages -> https://valentinaconde.github.io/boniata/
+## Pagina Eccomerce de dietetica 
+## Link a Github Pages -> https://valentinaconde.github.io/boniata/
