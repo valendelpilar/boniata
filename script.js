@@ -10,7 +10,7 @@ productos_destacados.forEach((producto, indice) => {
         <p class="card-text nombre">${producto.nombre} - <strong>${producto.marca}</strong> </p>
         <p class="card-text descripcion">${producto.descripcion} </p>
         <p class="card-text precio">$${producto.precio} </p>
-        <button type="button" class="btn">Agregar al carrito <i class="fas fa-shopping-basket"></i></button>
+        <button type="button" class="btn" id="boton_carrito_producto${producto.id}">Agregar al carrito <i class="fas fa-shopping-basket"></i></button>
         </div>
     </div>
     `
@@ -29,7 +29,7 @@ productos_nuevos.forEach((producto, indice) => {
         <p class="card-text nombre">${producto.nombre} - <strong>${producto.marca}</strong> </p>
         <p class="card-text descripcion">${producto.descripcion} </p>
         <p class="card-text precio">$${producto.precio} </p>
-        <button type="button" class="btn">Agregar al carrito <i class="fas fa-shopping-basket"></i></button>
+        <button type="button" class="btn" id="boton_carrito_producto${producto.id}">Agregar al carrito <i class="fas fa-shopping-basket"></i></button>
         </div>
     </div>
     `
@@ -48,7 +48,7 @@ productos_ofertas.forEach((producto, indice) => {
         <p class="card-text nombre">${producto.nombre} - <strong>${producto.marca}</strong> </p>
         <p class="card-text descripcion">${producto.descripcion} </p>
         <p class="card-text precio">$${producto.precio} </p>
-        <button type="button" class="btn">Agregar al carrito <i class="fas fa-shopping-basket"></i></button>
+        <button type="button" class="btn" id="boton_carrito_producto${producto.id}">Agregar al carrito <i class="fas fa-shopping-basket"></i></button>
         </div>
     </div>
     `
@@ -56,12 +56,37 @@ productos_ofertas.forEach((producto, indice) => {
 
 
 
+let carrito = document.getElementById('carrito')
+
+productos_destacados.forEach((producto,indice) => {
+    let boton_agregar = document.getElementById(`boton_carrito_producto${producto.id}`)
+    boton_agregar.addEventListener('click', () =>{
+        console.log("AGREGAR PRODUCTO")
+    })
+})
+
+productos_nuevos.forEach((producto,indice) => {
+    let boton_agregar = document.getElementById(`boton_carrito_producto${producto.id}`)
+    boton_agregar.addEventListener('click', () =>{
+        console.log("AGREGAR PRODUCTO")
+    })
+})
+
+productos_ofertas.forEach((producto,indice) => {
+    let boton_agregar = document.getElementById(`boton_carrito_producto${producto.id}`)
+    boton_agregar.addEventListener('click', () =>{
+        console.log("AGREGAR PRODUCTO")
+    })
+})
 
 
 
+// let carrito = []
+// function agregar_producto_carrito(producto) {
 
+// }
 
-
+// carrito = agregar_producto_carrito()
 
 
 // let productos = []
