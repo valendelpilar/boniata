@@ -3,7 +3,9 @@
     margin: 0;
 }
 
-
+body{
+    font-family: 'M PLUS 1 Code', sans-serif;
+}
 .navbar{
     background-color: rgb(248, 234, 237);
 }
@@ -81,4 +83,26 @@ footer{
     align-items: center;
 }
 
+.card{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+/* .icono_carrito{
+    margin-right: 15px;
+    border-color: pink;
+} */
 
+
+.div_carrito{
+    background-color: rgb(218, 189, 189);
+    font-size: small;
+}
+
+.boton_borrar{
+    height: 50px;
+    font-size: small;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}

@@ -128,7 +128,7 @@ const producto18 = new Producto("Alfajor negro sin azucar", "Chocoleit", 120, "S
 // const producto = new Producto("","",,"")
 
 
-
 let productos_destacados = [producto1, producto2, producto3, producto4]
-let productos_nuevos = [producto5,producto6,producto7,producto8]
-let productos_ofertas = [producto10]
+let productos_nuevos = [producto5,producto6,producto7,producto8,producto16,producto17]
+let productos_ofertas = [producto10,producto11,producto12,producto13,producto14,producto15]
+// let productos_todos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto10]
