@@ -1,44 +1,100 @@
 class Producto {
-    constructor(nombre, marca, precio, descripcion,id) {
+    constructor(nombre, marca, precio, descripcion,id,tipo) {
         this.nombre = nombre
         this.precio = precio
         this.marca = marca
         this.descripcion = descripcion
         this.id = id
+        this.tipo = tipo
     }
 }
 
-const producto1 = new Producto("Chocolate blanco", "Aguila", 275, "SIN TACC",1)
-const producto2 = new Producto("Chocolate taza", "Aguila", 325, "SIN TACC",2)
-const producto3 = new Producto("Chocolate 60%", "Aguila", 410, "SIN TACC",3)
-const producto4 = new Producto("Chocolate 70%", "Aguila", 445, "SIN TACC",4)
-const producto5 = new Producto("Conito dulce de leche", "Banda naranja", 80, "SIN TACC",5)
-const producto6 = new Producto("Alfajor chocolate", "Banda naranja", 60, "SIN TACC",6)
-const producto7 = new Producto("Alfajor sin baño de dulce de leche", "Banda naranja", 60, "SIN TACC",7)
-const producto8 = new Producto("Alfajor sin baño de fruta", "Banda naranja", 60, "SIN TACC",8)
-const producto9 = new Producto("Chocolate con almendras 72gr", "Cadbury", 250, "SIN TACC",9)
-const producto10 = new Producto("Alfajor de nuez", "Celienergy", 90, "SIN TACC",10)
-const producto11 = new Producto("Alfajor de membrillo negro", "Celienergy", 90, "SIN TACC",11)
-const producto12 = new Producto("Alfajor de zapallo y algarroba", "Celienergy", 90, "SIN TACC",12)
-const producto13 = new Producto("Alfajor de membrillo blanco", "Celienergy", 90, "SIN TACC",13)
-const producto14 = new Producto("Alfajor de chocolate sin azucar", "Cerro azul", 125, "SIN TACC - SIN AZUCAR",14)
-const producto15 = new Producto("Alfajor vegano sabor chocolate", "Cerro azul", 100, "SIN TACC - VEGANO",15)
-const producto16 = new Producto("Alfajor vegano sabor limon", "Cerro azul", 100, "SIN TACC - VEGANO",16)
-const producto17 = new Producto("Alfajor blanco sin azucar", "Chocoleit", 120, "SIN TACC - SIN AZUCAR",17)
-const producto18 = new Producto("Alfajor negro sin azucar", "Chocoleit", 120, "SIN TACC - SIN AZUCAR",18)
-// const producto = new Producto("Block MITI MITI", "Coffler", 350, "SIN TACC",19)
-// const producto = new Producto("Chocolate organico 60%", "Colonial", 375, "SIN TACC",20)
-// const producto = new Producto("Chocolate organico 70%", "Colonial", 375, "SIN TACC",21)
-// const producto = new Producto("Chocolate organico 80%", "Colonial", 375, "SIN TACC",22)
-// const producto = new Producto("Chocolate stevia 70%", "Colonial", 350, "SIN TACC",23)
-// const producto = new Producto("Chocolate 70% frutos secos", "Copani", 280, "-",24)
-// const producto = new Producto("Chocolate 70% stevia", "Copani", 280, "-",25)
-// const producto = new Producto("Chocolate 80%", "Copani", 280, "-",26)
-// const producto = new Producto("Chocolate 80% frutos secos", "Copani", 280, "-",27)
-// const producto = new Producto("Alfajor chocolate blanco", "Don felix gaspar", 105, "SIN TACC",28)
-// const producto = new Producto("Alfajor chocolate negro", "Don felix gaspar", 105, "SIN TACC",29)
-// const producto = new Producto("Alfajor DDL baño de glase", "Don felix gaspar", 105, "SIN TACC",30)
-// const producto = new Producto("Alfajor de fruta", "Don felix gaspar", 105, "SIN TACC",31)
+const producto1 = new Producto("Chocolate blanco", "Aguila", 275, "SIN TACC",1,"chocolate")
+const producto2 = new Producto("Chocolate taza", "Aguila", 325, "SIN TACC",2,"chocolate")
+const producto3 = new Producto("Chocolate 60%", "Aguila", 410, "SIN TACC",3,"chocolate")
+const producto4 = new Producto("Chocolate 70%", "Aguila", 445, "SIN TACC",4,"chocolate")
+const producto5 = new Producto("Conito dulce de leche", "Banda naranja", 80, "SIN TACC",5,"chocolate")
+const producto6 = new Producto("Alfajor chocolate", "Banda naranja", 60, "SIN TACC",6,"alfajor")
+const producto7 = new Producto("Alfajor sin baño de dulce de leche", "Banda naranja", 60, "SIN TACC",7,"alfajor")
+const producto8 = new Producto("Alfajor sin baño de fruta", "Banda naranja", 60, "SIN TACC",8,"alfajor")
+// const producto9 = new Producto("Block MITI MITI", "Coffler", 350, "SIN TACC",9,"chocolate")
+const producto10 = new Producto("Alfajor de nuez", "Celienergy", 90, "SIN TACC",10,"alfajor")
+const producto11 = new Producto("Alfajor de membrillo negro", "Celienergy", 90, "SIN TACC",11,"alfajor")
+const producto12 = new Producto("Alfajor de zapallo y algarroba", "Celienergy", 90, "SIN TACC",12,"alfajor")
+const producto13 = new Producto("Alfajor de membrillo blanco", "Celienergy", 90, "SIN TACC",13,"alfajor")
+const producto14 = new Producto("Alfajor de chocolate sin azucar", "Cerro azul", 125, "SIN TACC - SIN AZUCAR",14,"alfajor")
+const producto15 = new Producto("Alfajor vegano sabor chocolate", "Cerro azul", 100, "SIN TACC - VEGANO",15,"alfajor")
+const producto16 = new Producto("Alfajor vegano sabor limon", "Cerro azul", 100, "SIN TACC - VEGANO",16,"alfajor")
+const producto17 = new Producto("Alfajor blanco sin azucar", "Chocoleit", 120, "SIN TACC - SIN AZUCAR",17,"alfajor")
+const producto18 = new Producto("Alfajor negro sin azucar", "Chocoleit", 120, "SIN TACC - SIN AZUCAR",18,"alfajor")
+const producto19 = new Producto("Alfajor de fruta", "Don felix gaspar", 105, "SIN TACC",19,"alfajor")
+const producto20 = new Producto("Chocolate organico 60%", "Colonial", 375, "SIN TACC",20,"chocolate")
+const producto21 = new Producto("Chocolate organico 70%", "Colonial", 375, "SIN TACC",21,"chocolate")
+const producto22 = new Producto("Chocolate organico 80%", "Colonial", 375, "SIN TACC",22,"chocolate")
+const producto23 = new Producto("Chocolate stevia 70%", "Colonial", 350, "SIN TACC",23,"chocolate")
+const producto24 = new Producto("Chocolate 70% frutos secos", "Copani", 280, "-",24,"chocolate")
+const producto25 = new Producto("Chocolate 70%", "Copani", 280, "-",25,"chocolate")
+const producto26 = new Producto("Chocolate 80%", "Copani", 280, "-",26,"chocolate")
+const producto27 = new Producto("Chocolate 80% frutos secos", "Copani", 280, "-",27,"chocolate")
+const producto28 = new Producto("Alfajor chocolate blanco", "Don felix gaspar", 105, "SIN TACC",28,"alfajor")
+const producto29 = new Producto("Alfajor chocolate negro", "Don felix gaspar", 105, "SIN TACC",29,"alfajor")
+const producto30 = new Producto("Alfajor DDL baño de glase", "Don felix gaspar", 105, "SIN TACC",30,"alfajor")
+
+
+
+
+    // let productos_destacados = [producto1, producto2, producto3, producto4]
+    // let productos_nuevos = [producto5,producto6,producto7,producto8,producto16,producto17]
+    // let productos_ofertas = [producto10,producto11,producto12,producto13,producto14,producto15]
+let productos_todos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto10,
+                    producto11,producto12,producto13,producto14,producto15,producto16,producto17,producto18,producto19,
+                    producto20,producto21,producto22,producto23,producto24,producto25,producto26,producto27,producto28,
+                    producto29,producto30]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 // const producto = new Producto("Alfajor de maicena", "Don felix gaspar", 105, "SIN TACC",32)
 // const producto = new Producto("Chocolate negro", "Felices las vacas", 120, "CONTIENE GLUTEN",33)
 // const producto = new Producto("Le choc", "Felices las vacas", 145, "SIN TACC",34)
@@ -126,9 +182,3 @@ const producto18 = new Producto("Alfajor negro sin azucar", "Chocoleit", 120, "S
 // const producto = new Producto("","",,"")
 // const producto = new Producto("","",,"")
 // const producto = new Producto("","",,"")
-
-
-let productos_destacados = [producto1, producto2, producto3, producto4]
-let productos_nuevos = [producto5,producto6,producto7,producto8,producto16,producto17]
-let productos_ofertas = [producto10,producto11,producto12,producto13,producto14,producto15]
-// let productos_todos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto10]
