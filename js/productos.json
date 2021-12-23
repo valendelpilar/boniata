@@ -1,0 +1,240 @@
+[
+    {
+        "nombre": "Chocolate blanco",
+        "marca": "Aguila",
+        "precio": 275,
+        "descripcion": "SIN TACC",
+        "id": 1,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate taza",
+        "marca": "Aguila",
+        "precio": 325,
+        "descripcion": "SIN TACC",
+        "id": 2,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate 60%",
+        "marca": "Aguila",
+        "precio": 410,
+        "descripcion": "SIN TACC",
+        "id": 3,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate 70%",
+        "marca": "Aguila",
+        "precio": 445,
+        "descripcion": "SIN TACC",
+        "id": 4,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Conito de dulce de leche",
+        "marca": "Banda naranja",
+        "precio": 80,
+        "descripcion": "SIN TACC",
+        "id": 5,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Alfajor de chocolate",
+        "marca": "Banda naranja",
+        "precio": 60,
+        "descripcion": "SIN TACC",
+        "id": 6,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de dulce de leche sin baño",
+        "marca": "Banda naranja",
+        "precio": 60,
+        "descripcion": "SIN TACC",
+        "id": 7,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de fruta sin baño",
+        "marca": "Banda naranja",
+        "precio": 60,
+        "descripcion": "SIN TACC",
+        "id": 8,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de nuez",
+        "marca": "Celienergy",
+        "precio": 90,
+        "descripcion": "SIN TACC",
+        "id": 9,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de membrillo negro",
+        "marca": "Celienergy",
+        "precio": 90,
+        "descripcion": "SIN TACC",
+        "id": 11,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de zapallo y algarroba",
+        "marca": "Celienergy",
+        "precio": 90,
+        "descripcion": "SIN TACC",
+        "id": 11,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de membrillo blanco",
+        "marca": "Celienergy",
+        "precio": 90,
+        "descripcion": "SIN TACC",
+        "id": 12,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de chocolate sin azucar",
+        "marca": "Cerro azul",
+        "precio": 125,
+        "descripcion": "SIN TACC - SIN AZUCAR",
+        "id": 13,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor vegano sabor chocolate",
+        "marca": "Cerro azul",
+        "precio": 100,
+        "descripcion": "SIN TACC - VEGANO",
+        "id": 14,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor vegano sabor limon",
+        "marca": "Cerro azul",
+        "precio": 100,
+        "descripcion": "SIN TACC - VEGANO",
+        "id": 15,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor blanco sin azucar",
+        "marca": "Chocoleit",
+        "precio": 120,
+        "descripcion": "SIN TACC - SIN AZUCAR",
+        "id": 16,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor negro sin azucar",
+        "marca": "Chocoleit",
+        "precio": 120,
+        "descripcion": "SIN TACC - SIN AZUCAR",
+        "id": 17,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor de fruta",
+        "marca": "Don felix gaspar",
+        "precio": 105,
+        "descripcion": "SIN TACC",
+        "id": 18,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Chocolate organixo 60%",
+        "marca": "Colonial",
+        "precio": 375,
+        "descripcion": "SIN TACC",
+        "id": 19,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate organico 70%",
+        "marca": "Colonial",
+        "precio": 375,
+        "descripcion": "SIN TACC",
+        "id": 20,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate organico 80%",
+        "marca": "Colonial",
+        "precio": 375,
+        "descripcion": "SIN TACC",
+        "id": 21,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate stevia 70%",
+        "marca": "Colonial",
+        "precio": 350,
+        "descripcion": "SIN TACC",
+        "id": 22,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate 70% frutos secos",
+        "marca": "Copani",
+        "precio": 280,
+        "descripcion": "-",
+        "id": 23,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate 70%",
+        "marca": "Copani",
+        "precio": 280,
+        "descripcion": "-",
+        "id": 24,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate 80%",
+        "marca": "Copani",
+        "precio": 280,
+        "descripcion": "-",
+        "id": 25,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Chocolate 80% frutos secos",
+        "marca": "Copani",
+        "precio": 280,
+        "descripcion": "-",
+        "id": 26,
+        "tipo": "chocolate"
+    },
+    {
+        "nombre": "Alfajor chocolate blanco",
+        "marca": "Don felix gaspar",
+        "precio": 105,
+        "descripcion": "SIN TACC",
+        "id": 27,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor chocolate negro",
+        "marca": "Don felix gaspar",
+        "precio": 105,
+        "descripcion": "SIN TACC",
+        "id": 28,
+        "tipo": "alfajor"
+    },
+    {
+        "nombre": "Alfajor DDL baño de glase",
+        "marca": "Don felix gaspar",
+        "precio": 105,
+        "descripcion": "SIN TACC",
+        "id": 29,
+        "tipo": "alfajor"
+    }
+
+]
+
+
+
+
+
