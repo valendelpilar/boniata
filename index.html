@@ -30,20 +30,9 @@
         <a class="navbar-brand" href="index.html">BONIATA MARKET</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <!-- <span class="navbar-toggler-icon"></span> -->
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          </ul>
-          <form class="d-flex">
-            <!-- <input class="form-control me-2 rounded-pill ps-3 pe-5 " type="search" placeholder="Que estas buscando?"
-              aria-label="Search"> -->
-            <!-- <button class="btn pe-5" type="submit"><i class="fas fa-search" style="color:rgb(0, 0, 0)"></i></button> -->
-          </form>
-        </div>
       </div>
-      <a id="boton_carrito" data-bs-toggle="modal" data-bs-target="#id_modal" class="nav-link btn btn-light"><i class="fas fa-shopping-bag"></i></a>
+      <a id="boton_carrito" data-bs-toggle="modal" data-bs-target="#id_modal" class="nav-link btn btn-light"><i class="fas fa-shopping-cart"></i></a>
     </nav
 
   </header>
@@ -79,52 +68,24 @@
                 <span aria-hidden="true"></span>
               </button>
             </div>
-            <div class="modal-body d-flex flex-wrap" id="modal-body">
-              
-            </div>
+            <div class="modal-body d-flex flex-wrap" id="modal-body"></div>
             <div class="modal-footer">
-              <button type="button" id="boton_finalizar_compra" class="btn btn-secondary" data-bs-dismiss="modal">Finalizar Compra</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" id="boton_finalizar_compra" class="btn btn-primary " data-bs-dismiss="modal">Finalizar Compra<i class="fas fa-cash-register ps-2"></i></button>
             </div>
           </div>
         </div>
       </div>
-
   </main>
 
   <hr>
   <footer>
-    <!-- <ul class="lista_footer">
-      <li>
-        <h6 class="ps-3">CATEGORIAS</h6>
-      </li>
-      <li><a class="dropdown-item" href="shop/alfajores.html">Alfajores Barritas y Chocolates</a></li>
-      <li><a class="dropdown-item" href="shop/almacen.html">Almacen</a></li>
-      <li><a class="dropdown-item" href="shop/beauty_deco_home.html">Beauty Deco Home</a></li>
-      <li><a class="dropdown-item" href="shop/bebidas_sin_refrigeracion.html">Bebidas sin Refrigeracion</a></li>
-      <li><a class="dropdown-item" href="shop/condimentos_sales_especias.html">Condimentos Sales Especias</a></li>
-      <li><a class="dropdown-item" href="shop/congelados.html">Congelados</a></li>
-      <li><a class="dropdown-item" href="shop/frutas_secas.html">Frutas secas a Granel</a></li>
-      <li><a class="dropdown-item" href="shop/galletas_cereales_granolas.html">Galletas Cereales Granolas</a></li>
-      <li><a class="dropdown-item" href="shop/harinas_premezclas_rebozadores.html">Harinas Premezclas Rebozadores</a>
-      </li>
-    </ul>
-    <ul class="lista_footer">
-      <li><a class="dropdown-item" href="shop/snacks.html">Snacks</a></li>
-      <li><a class="dropdown-item" href="shop/panaderia_reposteria.html">Panaderia y Reposteria</a></li>
-      <li><a class="dropdown-item" href="shop/fruta_congelada_pedido.html">Fruta congelada X PEDIDO</a></li>
-      <li><a class="dropdown-item" href="shop/verdura_congelada_pedido.html">Verdura congelada X PEDIDO</a></li>
-      <li><a class="dropdown-item" href="shop/coeco_pedido.html">Coeco pollo X PEDIDO</a></li>
-      <li><a class="dropdown-item" href="shop/philisopheat_pedido.html">Philosopheat X PEDIDO</a></li>
-      <li><a class="dropdown-item" href="shop/sweet_pedido.html">Sweet X PEDIDO</a></li>
-      <li><a class="dropdown-item" href="shop/weekifit_pedido.html">Weekifit X PEDIDO</a></li>
-    </ul> -->
-
     <div class="redes">
-      <i class="fab fa-instagram"><a href="https://www.instagram.com/boniatamarket/" target="_blank"
-          class="ps-2 redes">boniatamarket</a></i>
+      <i class="fab fa-instagram"></i><a href="https://www.instagram.com/boniatamarket/" target="_blank"
+          class="ps-2 redes">boniatamarket</a>
       <br>
-      <i class="fab fa-instagram"><a href="https://www.instagram.com/laceliaqueria/" target="_blank"
-          class="ps-2 redes">laceliaqueria</a></i>
+      <i class="fab fa-instagram"></i><a href="https://www.instagram.com/laceliaqueria/" target="_blank"
+          class="ps-2 redes">laceliaqueria</a>
     </div>
   </footer>
 
@@ -137,8 +98,7 @@
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
-  <!-- <script src="js/productos.js"></script> -->
-  <!-- <script src="productos_index.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/script.js"></script>
 </body>
 
