@@ -13,6 +13,8 @@
 
   <script src="https://kit.fontawesome.com/a4fb3405f4.js" crossorigin="anonymous"></script>
 
+  <link href="https://bootswatch.com/5/minty/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  
   <link rel="stylesheet" href="styles.css">
 
   <!-- BODY -->
@@ -41,12 +43,16 @@
           </form>
         </div>
       </div>
-      <a href="#div_carrito_compras" id="boton_carrito" class="btn"><i class="fas fa-shopping-bag"></i></a>
+      <a id="boton_carrito" data-bs-toggle="modal" data-bs-target="#id_modal" class="nav-link btn btn-light"><i class="fas fa-shopping-bag"></i></a>
     </nav
 
   </header>
 
   <main>
+
+    
+
+
     <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
       <div class="carousel-inner ">
         <div class="carousel-item active">
@@ -62,6 +68,26 @@
       <div id="div_chocolates" class="row ms-5"></div>
     
       <div id="div_carrito_compras" class="div_carrito row"></div>
+
+
+      <div class="modal" id="id_modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal_title">CARRITO</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="modal-body d-flex flex-wrap" id="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="boton_finalizar_compra" class="btn btn-secondary" data-bs-dismiss="modal">Finalizar Compra</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
   </main>
 

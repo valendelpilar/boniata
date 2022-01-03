@@ -113,5 +113,12 @@ footer{
     height: 150px;
     width: auto;
     align-self: center;
+    
 }
+
+.imagen_carrito{
+    height: 50px;
+    width: auto;
+}
+
 

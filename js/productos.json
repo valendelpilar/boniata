@@ -5,7 +5,8 @@
         "precio": 275,
         "descripcion": "SIN TACC",
         "id": 1,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate taza",
@@ -13,7 +14,8 @@
         "precio": 325,
         "descripcion": "SIN TACC",
         "id": 2,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate 60%",
@@ -21,7 +23,8 @@
         "precio": 410,
         "descripcion": "SIN TACC",
         "id": 3,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate 70%",
@@ -29,7 +32,8 @@
         "precio": 445,
         "descripcion": "SIN TACC",
         "id": 4,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Conito de dulce de leche",
@@ -37,7 +41,8 @@
         "precio": 80,
         "descripcion": "SIN TACC",
         "id": 5,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de chocolate",
@@ -45,7 +50,8 @@
         "precio": 60,
         "descripcion": "SIN TACC",
         "id": 6,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de dulce de leche sin baño",
@@ -53,7 +59,8 @@
         "precio": 60,
         "descripcion": "SIN TACC",
         "id": 7,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de fruta sin baño",
@@ -61,7 +68,8 @@
         "precio": 60,
         "descripcion": "SIN TACC",
         "id": 8,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de nuez",
@@ -69,7 +77,8 @@
         "precio": 90,
         "descripcion": "SIN TACC",
         "id": 9,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de membrillo negro",
@@ -77,7 +86,8 @@
         "precio": 90,
         "descripcion": "SIN TACC",
         "id": 11,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de zapallo y algarroba",
@@ -85,7 +95,8 @@
         "precio": 90,
         "descripcion": "SIN TACC",
         "id": 11,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de membrillo blanco",
@@ -93,7 +104,8 @@
         "precio": 90,
         "descripcion": "SIN TACC",
         "id": 12,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de chocolate sin azucar",
@@ -101,7 +113,8 @@
         "precio": 125,
         "descripcion": "SIN TACC - SIN AZUCAR",
         "id": 13,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor vegano sabor chocolate",
@@ -109,7 +122,8 @@
         "precio": 100,
         "descripcion": "SIN TACC - VEGANO",
         "id": 14,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor vegano sabor limon",
@@ -117,7 +131,8 @@
         "precio": 100,
         "descripcion": "SIN TACC - VEGANO",
         "id": 15,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor blanco sin azucar",
@@ -125,7 +140,8 @@
         "precio": 120,
         "descripcion": "SIN TACC - SIN AZUCAR",
         "id": 16,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor negro sin azucar",
@@ -133,7 +149,8 @@
         "precio": 120,
         "descripcion": "SIN TACC - SIN AZUCAR",
         "id": 17,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor de fruta",
@@ -141,7 +158,8 @@
         "precio": 105,
         "descripcion": "SIN TACC",
         "id": 18,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate organixo 60%",
@@ -149,7 +167,8 @@
         "precio": 375,
         "descripcion": "SIN TACC",
         "id": 19,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate organico 70%",
@@ -157,7 +176,8 @@
         "precio": 375,
         "descripcion": "SIN TACC",
         "id": 20,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate organico 80%",
@@ -165,7 +185,8 @@
         "precio": 375,
         "descripcion": "SIN TACC",
         "id": 21,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate stevia 70%",
@@ -173,7 +194,8 @@
         "precio": 350,
         "descripcion": "SIN TACC",
         "id": 22,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate 70% frutos secos",
@@ -181,7 +203,8 @@
         "precio": 280,
         "descripcion": "-",
         "id": 23,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate 70%",
@@ -189,7 +212,8 @@
         "precio": 280,
         "descripcion": "-",
         "id": 24,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate 80%",
@@ -197,7 +221,8 @@
         "precio": 280,
         "descripcion": "-",
         "id": 25,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Chocolate 80% frutos secos",
@@ -205,7 +230,8 @@
         "precio": 280,
         "descripcion": "-",
         "id": 26,
-        "tipo": "chocolate"
+        "tipo": "chocolate",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor chocolate blanco",
@@ -213,7 +239,8 @@
         "precio": 105,
         "descripcion": "SIN TACC",
         "id": 27,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor chocolate negro",
@@ -221,7 +248,8 @@
         "precio": 105,
         "descripcion": "SIN TACC",
         "id": 28,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     },
     {
         "nombre": "Alfajor DDL baño de glase",
@@ -229,7 +257,8 @@
         "precio": 105,
         "descripcion": "SIN TACC",
         "id": 29,
-        "tipo": "alfajor"
+        "tipo": "alfajor",
+        "cantidad": 0
     }
 
 ]
