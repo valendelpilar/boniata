@@ -49,8 +49,8 @@ fetch('js/productos.json')
             }
             
             document.getElementById(`boton_carrito_producto${producto.id}`).addEventListener('click', () => {
-                event.preventDefault()
                 total = JSON.parse(localStorage.getItem('total'))
+                event.preventDefault()
 
                 let found = carrito.find(productoCarrito => productoCarrito.id === producto.id)
                 if (found != null && found.cantidad > 0) {
