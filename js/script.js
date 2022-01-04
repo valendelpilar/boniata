@@ -1,5 +1,5 @@
 fetch('js/productos.json')
-    
+
     .then(response => response.json())
     .then(data => {
 
@@ -41,18 +41,18 @@ fetch('js/productos.json')
             }
         })
 
-
-
         //AGREGAR PRODUCTOS AL CARRITO
         let carrito = []
         let total = 0
-
         data.forEach((producto, indice) => {
             if (localStorage.length > 0) {
                 carrito = JSON.parse(localStorage.getItem('carrito'))
+                total = JSON.parse(localStorage.getItem('total'))
             }
+
             document.getElementById(`boton_carrito_producto${producto.id}`).addEventListener('click', () => {
                 event.preventDefault()
+
                 let found = carrito.find(productoCarrito => productoCarrito.id === producto.id)
                 if (found != null && found.cantidad > 0) {
                     found.cantidad++
@@ -61,13 +61,11 @@ fetch('js/productos.json')
                     producto.cantidad++
                     carrito.push(producto)
                 }
-                
+
                 localStorage.setItem('carrito', JSON.stringify(carrito))
                 total = total + producto.precio
-                localStorage.setItem('total',JSON.stringify(total))
+                localStorage.setItem('total', JSON.stringify(total))
             })
-
-
         })
 
 
@@ -78,10 +76,10 @@ fetch('js/productos.json')
 
         //MOSTRAR CARRITO
         let carrito_compras_html = document.getElementById('modal-body')
-        
-        
+
+
         document.getElementById('boton_carrito').addEventListener('click', () => {
-            
+
             let productos_parseados = JSON.parse(localStorage.getItem('carrito'))
             let total = JSON.parse(localStorage.getItem('total'))
             carrito_compras_html.innerHTML = ''
@@ -103,14 +101,17 @@ fetch('js/productos.json')
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <h3>Total: $${total}</h3>
-                
+                </div>                
 
             `
                 })
+
+                carrito_compras_html.innerHTML += `
+                <h3>Total: $${total}</h3>
                 
+                `
+
+
             }
             else {
                 carrito_compras_html.innerHTML += `
@@ -126,7 +127,7 @@ fetch('js/productos.json')
                     carrito.splice(lugar, 1)
                     localStorage.setItem('carrito', JSON.stringify(carrito))
                     total = total - (producto.precio * producto.cantidad)
-                    localStorage.setItem('total',JSON.stringify(total))
+                    localStorage.setItem('total', JSON.stringify(total))
                     producto.cantidad = 0
 
                 })
@@ -147,7 +148,7 @@ fetch('js/productos.json')
                     }
                     localStorage.setItem('carrito', JSON.stringify(carrito))
                     total = total - producto.precio
-                    localStorage.setItem('total',JSON.stringify(total))
+                    localStorage.setItem('total', JSON.stringify(total))
                 })
             })
 
@@ -165,19 +166,33 @@ fetch('js/productos.json')
                     }
                     localStorage.setItem('carrito', JSON.stringify(carrito))
                     total = total + producto.precio
-                    localStorage.setItem('total',JSON.stringify(total))
+                    localStorage.setItem('total', JSON.stringify(total))
                 })
             })
         })
 
 
 
+        let boton_finalizar_compra_html = document.getElementById('boton_finalizar_compra')
+        boton_finalizar_compra_html.addEventListener('click', () => {
+            data.forEach((producto, indice) => {
+                producto.cantidad = 0
+            })
+            carrito = []
+            total = 0
+
+            localStorage.setItem('carrito', JSON.stringify([]))
+            localStorage.setItem('total', 0)
+            swal.fire("Gracias por su compra!", "Los productos seran enviados en la brevedad", "success")
+        })
+
+
     })
 
 
-    
-    
-    
+
+
+
 
 
 
@@ -189,10 +204,6 @@ fetch('js/productos.json')
 
 
 
-let boton_finalizar_compra_html = document.getElementById('boton_finalizar_compra')
-boton_finalizar_compra_html.addEventListener('click', () => {
-    localStorage.setItem('carrito', JSON.stringify([]))
-    swal.fire("Gracias por su compra!", "Los productos seran enviados en la brevedad", "success")
-})
+
 
 
