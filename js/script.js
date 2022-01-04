@@ -40,34 +40,31 @@ fetch('js/productos.json')
                 `
             }
         })
-
         //AGREGAR PRODUCTOS AL CARRITO
         let carrito = []
         let total = 0
         data.forEach((producto, indice) => {
             if (localStorage.length > 0) {
                 carrito = JSON.parse(localStorage.getItem('carrito'))
-                total = JSON.parse(localStorage.getItem('total'))
             }
-
+            
             document.getElementById(`boton_carrito_producto${producto.id}`).addEventListener('click', () => {
                 event.preventDefault()
+                total = JSON.parse(localStorage.getItem('total'))
 
                 let found = carrito.find(productoCarrito => productoCarrito.id === producto.id)
                 if (found != null && found.cantidad > 0) {
                     found.cantidad++
                 }
                 else {
-                    producto.cantidad++
+                    producto.cantidad = 1
                     carrito.push(producto)
                 }
-
-                localStorage.setItem('carrito', JSON.stringify(carrito))
                 total = total + producto.precio
+                localStorage.setItem('carrito', JSON.stringify(carrito))
                 localStorage.setItem('total', JSON.stringify(total))
             })
         })
-
 
 
 
@@ -83,7 +80,7 @@ fetch('js/productos.json')
             let productos_parseados = JSON.parse(localStorage.getItem('carrito'))
             let total = JSON.parse(localStorage.getItem('total'))
             carrito_compras_html.innerHTML = ''
-            if (productos_parseados.length > 0) {
+            if (productos_parseados != null && productos_parseados.length > 0) {
                 productos_parseados.forEach((producto, indice) => {
                     carrito_compras_html.innerHTML += `
             
@@ -119,17 +116,17 @@ fetch('js/productos.json')
         `
             }
 
+
             //borrar productos del carrito
             carrito.forEach((producto, indice) => {
                 document.getElementById(`boton_borrar_producto${producto.id}`).addEventListener('click', () => {
                     event.preventDefault()
-                    let lugar = carrito.findIndex(productoCarrito => productoCarrito.id === producto.id)
+                    let lugar = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
+                    total = total - (producto.precio * producto.cantidad)
+                    producto.cantidad = 0
                     carrito.splice(lugar, 1)
                     localStorage.setItem('carrito', JSON.stringify(carrito))
-                    total = total - (producto.precio * producto.cantidad)
                     localStorage.setItem('total', JSON.stringify(total))
-                    producto.cantidad = 0
-
                 })
             })
 
@@ -170,7 +167,6 @@ fetch('js/productos.json')
                 })
             })
         })
-
 
 
         let boton_finalizar_compra_html = document.getElementById('boton_finalizar_compra')
