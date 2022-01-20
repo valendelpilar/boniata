@@ -4,9 +4,33 @@ fetch('js/productos.json')
     .then(data => {
 
 
-        //MOSTRAR ALFAJORES
+        let carrito = []
+        let total = 0
         let alfajores_html = document.getElementById('div_alfajores')
-        data.forEach((producto, indice) => {
+        let chocolates_html = document.getElementById('div_chocolates')
+        let carrito_compras_html = document.getElementById('modal-body')
+        let boton_finalizar_compra_html = document.getElementById('boton_finalizar_compra')
+        let boton_carrito = document.getElementById('boton_carrito')
+
+
+        //AGREGAR DATOS AL LOCAL STORAGE
+        const agregar_local_storage = (carrito, total) => {
+            localStorage.setItem('carrito', JSON.stringify(carrito))
+            localStorage.setItem('total', JSON.stringify(total))
+        }
+
+
+        //TRAER DATOS DEL LOCAL STORAGE
+        const traer_local_storage = () => {
+            let carrito = JSON.parse(localStorage.getItem('carrito'))
+            let total = JSON.parse(localStorage.getItem('total'))
+
+            return { carrito, total }
+        }
+
+
+        //MOSTRAR ALFAJORES
+        data.map((producto) => {
             if (producto.tipo == "alfajor") {
                 alfajores_html.innerHTML += `
                     <div class="card m-2 " id="producto${producto.id}" style="width: 18rem;">
@@ -24,8 +48,7 @@ fetch('js/productos.json')
 
 
         //MOSTRAR CHOCOLATES
-        let chocolates_html = document.getElementById('div_chocolates')
-        data.forEach((producto, indice) => {
+        data.map((producto) => {
             if (producto.tipo == "chocolate") {
                 chocolates_html.innerHTML += `
                     <div class="card m-2 " id="producto${producto.id}" style="width: 18rem;">
@@ -40,48 +63,51 @@ fetch('js/productos.json')
                 `
             }
         })
-        //AGREGAR PRODUCTOS AL CARRITO
-        let carrito = []
-        let total = 0
-        data.forEach((producto, indice) => {
-            if (localStorage.length > 0) {
-                carrito = JSON.parse(localStorage.getItem('carrito'))
-            }
-            
-            document.getElementById(`boton_carrito_producto${producto.id}`).addEventListener('click', () => {
-                total = JSON.parse(localStorage.getItem('total'))
-                event.preventDefault()
 
-                let found = carrito.find(productoCarrito => productoCarrito.id === producto.id)
-                if (found != null && found.cantidad > 0) {
-                    found.cantidad++
+
+        //AGREGAR PRODUCTOS AL CARRITO
+        data.map((producto) => {
+            document.getElementById(`boton_carrito_producto${producto.id}`).onclick = () => {
+
+                if (localStorage.length > 0) {
+                    total = JSON.parse(localStorage.getItem('total'))
                 }
-                else {
-                    producto.cantidad = 1
-                    carrito.push(producto)
-                }
-                total = total + producto.precio
-                localStorage.setItem('carrito', JSON.stringify(carrito))
-                localStorage.setItem('total', JSON.stringify(total))
-            })
+
+                agregar_carrito(carrito, producto, total)
+                alert('Producto agregado correctamente al carrito!')
+            }
         })
 
 
+        //funcion agregar productos al carrito
+        const agregar_carrito = (carrito, producto, total) => {
+
+            let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
+
+            producto.cantidad++
+            if (index >= 0) {
+                carrito.splice(index, 1)
+                carrito.push(producto)
+            }
+            else {
+                carrito.push(producto)
+            }
+
+            total = total + producto.precio
+
+            agregar_local_storage(carrito, total)
+        }
 
 
 
+        //MOSTRAR CARRITO Y BORRAR PRODUCTOS
+        boton_carrito.onclick = () => {
 
-        //MOSTRAR CARRITO
-        let carrito_compras_html = document.getElementById('modal-body')
-
-
-        document.getElementById('boton_carrito').addEventListener('click', () => {
-
-            let productos_parseados = JSON.parse(localStorage.getItem('carrito'))
-            let total = JSON.parse(localStorage.getItem('total'))
+            let { carrito, total } = traer_local_storage()
             carrito_compras_html.innerHTML = ''
-            if (productos_parseados != null && productos_parseados.length > 0) {
-                productos_parseados.forEach((producto, indice) => {
+            if (carrito != null && carrito.length > 0) {
+
+                carrito.map((producto) => {
                     carrito_compras_html.innerHTML += `
             
                 <div class="card m-2 card_carrito" style="width: 150px; height: auto; border:white" id="producto_carrito${producto.id}">
@@ -105,101 +131,102 @@ fetch('js/productos.json')
 
                 carrito_compras_html.innerHTML += `
                 <h3>Total: $${total}</h3>
+                <h6>Salga y entre del carrito para ver el precio actual</h6>
                 
                 `
-
-
             }
             else {
                 carrito_compras_html.innerHTML += `
             <h4 class="d-flex justify-content-center mt-4">no hay productos</h4>
-        `
+            `
             }
 
 
+
+
+
+
+
+
             //borrar productos del carrito
-            carrito.forEach((producto, indice) => {
-                document.getElementById(`boton_borrar_producto${producto.id}`).addEventListener('click', () => {
+            carrito.map((producto) => {
+
+                document.getElementById(`boton_borrar_producto${producto.id}`).onclick = () => {
+
                     event.preventDefault()
-                    let lugar = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
-                    total = total - (producto.precio * producto.cantidad)
-                    producto.cantidad = 0
-                    carrito.splice(lugar, 1)
-                    localStorage.setItem('carrito', JSON.stringify(carrito))
-                    localStorage.setItem('total', JSON.stringify(total))
-                })
+
+                    let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
+                    borrar_agregar_producto(producto.cantidad, producto, index)
+                    agregar_local_storage(carrito, total)
+                    alert('Producto borrado correctamente!')
+
+                }
             })
 
 
             //bajar cantidad producto
-            carrito.forEach((producto, indice) => {
-                document.getElementById(`boton_bajar_cantidad${producto.id}`).addEventListener('click', () => {
+            carrito.map((producto) => {
+                document.getElementById(`boton_bajar_cantidad${producto.id}`).onclick = () => {
                     event.preventDefault()
-                    let found = carrito.find(productoCarrito => productoCarrito.id === producto.id)
-                    if (found != null && found.cantidad > 1) {
-                        found.cantidad--
-                    }
-                    else {
-                        let lugar = carrito.findIndex(productoCarrito => productoCarrito.id === producto.id)
-                        carrito.splice(lugar, 1)
-                    }
-                    localStorage.setItem('carrito', JSON.stringify(carrito))
-                    total = total - producto.precio
-                    localStorage.setItem('total', JSON.stringify(total))
-                })
+
+                    let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
+                    borrar_agregar_producto(1, producto, index)
+                    agregar_local_storage(carrito, total)
+                    alert(`Producto borrado correctamente! Cantidad actual: ${producto.cantidad}`)
+
+
+                }
             })
 
 
             //subir cantidad producto
-            carrito.forEach((producto, indice) => {
-                if (localStorage.length > 0) {
-                    carrito = JSON.parse(localStorage.getItem('carrito'))
-                }
-                document.getElementById(`boton_subir_cantidad${producto.id}`).addEventListener('click', () => {
+            carrito.map((producto) => {
+                document.getElementById(`boton_subir_cantidad${producto.id}`).onclick = () => {
                     event.preventDefault()
-                    let found = carrito.find(productoCarrito => productoCarrito.id === producto.id)
-                    if (found != null && found.cantidad > 0) {
-                        found.cantidad++
-                    }
-                    localStorage.setItem('carrito', JSON.stringify(carrito))
-                    total = total + producto.precio
-                    localStorage.setItem('total', JSON.stringify(total))
-                })
-            })
-        })
+
+                    let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
+                    borrar_agregar_producto(-1, producto, index)
+                    agregar_local_storage(carrito, total)
+                    alert(`Producto agregado correctamente! Cantidad actual: ${producto.cantidad}`)
 
 
-        let boton_finalizar_compra_html = document.getElementById('boton_finalizar_compra')
-        boton_finalizar_compra_html.addEventListener('click', () => {
-            data.forEach((producto, indice) => {
-                producto.cantidad = 0
+                }
             })
+
+
+
+            //funcion para borrar y agregar productos
+            const borrar_agregar_producto = (cantidad, producto, index) => {
+                total = total - producto.precio * cantidad
+
+                if (producto.cantidad == 1 || producto.cantidad == cantidad) {
+                    carrito.splice(index, 1)
+                }
+
+                producto.cantidad = producto.cantidad - cantidad
+            }
+        }
+
+
+        //FINALIZA LA COMPRA
+        boton_finalizar_compra_html.onclick = () => {
+            let {carrito,total} = traer_local_storage()
+
+            swal.fire("Gracias por su compra!", `Precio final: $${total}`, "success")
+
+            for (let i = 0; i < carrito.length; i++) {
+                carrito[i].cantidad = 0
+            }
+
             carrito = []
             total = 0
 
-            localStorage.setItem('carrito', JSON.stringify([]))
-            localStorage.setItem('total', 0)
-            swal.fire("Gracias por su compra!", "Los productos seran enviados en la brevedad", "success")
-        })
+            agregar_local_storage(carrito, total)
 
+        }
 
     })
 
 
-
-
-
-
-
-
-
     .catch(error => console.log(error))
-
-
-
-
-
-
-
-
 
