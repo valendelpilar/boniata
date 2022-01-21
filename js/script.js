@@ -19,14 +19,6 @@ fetch('js/productos.json')
         }
 
 
-        //TRAER DATOS DEL LOCAL STORAGE
-        const traer_local_storage = () => {
-            let carrito = JSON.parse(localStorage.getItem('carrito'))
-            let total = JSON.parse(localStorage.getItem('total'))
-            return { carrito, total }
-        }
-
-
         //MOSTRAR ALFAJORES
         data.map((producto) => {
             if (producto.tipo == "alfajor") {
@@ -64,6 +56,7 @@ fetch('js/productos.json')
             document.getElementById(`boton_carrito_producto${producto.id}`).onclick = () => {
 
                 if (localStorage.length > 0) {
+                    carrito = JSON.parse(localStorage.getItem('carrito'))
                     total = JSON.parse(localStorage.getItem('total'))
                 }
 
@@ -90,15 +83,17 @@ fetch('js/productos.json')
 
             total = total + producto.precio
 
-            agregar_local_storage(carrito, total)
+            agregar_local_storage(carrito,total)
         }
 
 
 
         //MOSTRAR CARRITO Y BORRAR PRODUCTOS
         boton_carrito.onclick = () => {
+            
+            carrito = JSON.parse(localStorage.getItem('carrito'))
+            total = JSON.parse(localStorage.getItem('total'))
 
-            let { carrito, total } = traer_local_storage()
             carrito_compras_html.innerHTML = ''
             if (carrito != null && carrito.length > 0) {
 
@@ -140,7 +135,9 @@ fetch('js/productos.json')
 
                     let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
                     borrar_agregar_producto(producto.cantidad, producto, index)
-                    agregar_local_storage(carrito, total)
+                    
+                    agregar_local_storage(carrito,total)
+
                     alert('Producto borrado correctamente!')
                 }
 
@@ -154,7 +151,9 @@ fetch('js/productos.json')
 
                     let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
                     borrar_agregar_producto(1, producto, index)
-                    agregar_local_storage(carrito, total)
+                    
+                    agregar_local_storage(carrito,total)
+
                     alert(`Producto borrado correctamente! Cantidad actual: ${producto.cantidad}`)
                 }
             })
@@ -167,7 +166,9 @@ fetch('js/productos.json')
 
                     let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
                     borrar_agregar_producto(-1, producto, index)
-                    agregar_local_storage(carrito, total)
+                    
+                    agregar_local_storage(carrito,total)
+
                     alert(`Producto agregado correctamente! Cantidad actual: ${producto.cantidad}`)
                 }
             })
@@ -187,17 +188,13 @@ fetch('js/productos.json')
 
         //FINALIZA LA COMPRA
         boton_finalizar_compra_html.onclick = () => {
-            let { carrito, total } = traer_local_storage()
-
+            
             swal.fire("Gracias por su compra!", `Precio final: $${total}`, "success")
-
+            
             for (let i = 0; i < carrito.length; i++)
                 carrito[i].cantidad = 0
-
-            carrito = []
-            total = 0
-
-            agregar_local_storage(carrito, total)
+            
+            agregar_local_storage([],0)
 
         }
 
