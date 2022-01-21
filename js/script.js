@@ -188,13 +188,16 @@ fetch('js/productos.json')
 
         //FINALIZA LA COMPRA
         boton_finalizar_compra_html.onclick = () => {
-            
+
             swal.fire("Gracias por su compra!", `Precio final: $${total}`, "success")
             
             for (let i = 0; i < carrito.length; i++)
                 carrito[i].cantidad = 0
             
-            agregar_local_storage([],0)
+            carrito = []
+            total = 0
+
+            agregar_local_storage(carrito,total)
 
         }
 
