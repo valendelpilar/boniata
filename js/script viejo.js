@@ -73,7 +73,10 @@ fetch('js/productos.json')
 
             let index = carrito.findIndex(productoCarrito => productoCarrito.id == producto.id)
 
+            console.log('index',index);
             if (index >= 0) {
+                // carrito.splice(index, 1)
+                console.log('cantidad',carrito[index].cantidad);
                 carrito[index].cantidad++
             }
             else {
