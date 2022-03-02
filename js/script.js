@@ -23,12 +23,12 @@ fetch('js/productos.json')
         data.map((producto) => {
             if (producto.tipo == "alfajor") {
                 alfajores_html.innerHTML += `
-                    <div class="d-flex p-2 m-2 flex-md-column bg-danger bg-gradient bg-opacity-10 justify-content-center text-center border border-danger card_font" id="producto${producto.id}" style="width: 18rem;">
+                    <div class="d-flex p-2 m-2 flex-md-column bg-light bg-gradient bg-opacity-10 align-items-center text-center card_font"  id="producto${producto.id}" style="width: 18rem;">
                         <img src="multimedia/producto${producto.id}.jpg" class="imagen" alt="imagen">
                         <p>${producto.nombre} - <strong>${producto.marca}</strong> </p>
                         <p class="fs-6">${producto.descripcion} </p>
                         <p class="precio">$${producto.precio} </p>
-                        <button type="button" class="btn btn-dark bg-gradient boton_carrito_producto" id="boton_carrito_producto${producto.id}">Agregar al carrito<i class="fas fa-shopping-basket ps-2"></i></button>            
+                        <button type="button" class="btn btn-dark bg-gradient boton_carrito_producto" style="width:200px" id="boton_carrito_producto${producto.id}">Agregar al carrito<i class="fas fa-shopping-basket ps-2"></i></button>            
                     </div>
                 `
             }
@@ -39,7 +39,7 @@ fetch('js/productos.json')
         data.map((producto) => {
             if (producto.tipo == "chocolate") {
                 chocolates_html.innerHTML += `
-                    <div class="d-flex p-2 m-2 flex-md-column bg-danger bg-gradient bg-opacity-10 justify-content-center border border-danger text-center card_font" id="producto${producto.id}" style="width: 18rem;">
+                    <div class="d-flex p-2 m-2 flex-md-column bg-light bg-gradient bg-opacity-10 justify-content-center border border-light text-center card_font" id="producto${producto.id}" style="width: 18rem;">
                         <img src="multimedia/producto${producto.id}.jpg" class="imagen" alt="imagen">
                         <p class=>${producto.nombre} - <strong>${producto.marca}</strong> </p>
                         <p class=>${producto.descripcion} </p>
